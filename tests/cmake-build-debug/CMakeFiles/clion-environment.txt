@@ -1,0 +1,4 @@
+ToolSet: w64 5.0 (local)@D:\Aplikacje\Mingw_7.2.0\mingw32
+Options: 
+
+Options:

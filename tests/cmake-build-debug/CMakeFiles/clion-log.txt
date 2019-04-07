@@ -1,0 +1,59 @@
+"D:\Pliki programów (x86)\JetBrains\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Coding\C++\DALia\tests
+CMake Warning (dev) at CMakeLists.txt:1 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 7.2.0
+-- The CXX compiler identification is GNU 7.2.0
+-- Check for working C compiler: D:/Aplikacje/Mingw_7.2.0/mingw32/bin/gcc.exe
+-- Check for working C compiler: D:/Aplikacje/Mingw_7.2.0/mingw32/bin/gcc.exe -- broken
+CMake Error at D:/Pliki programĂłw (x86)/JetBrains/apps/CLion/ch-0/191.6183.77/bin/cmake/win/share/cmake-3.13/Modules/CMakeTestCCompiler.cmake:52 (message):
+  The C compiler
+
+    "D:/Aplikacje/Mingw_7.2.0/mingw32/bin/gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: D:/Coding/C++/DALia/tests/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command:"D:/Aplikacje/Mingw_7.2.0/mingw32/bin/mingw32-make.exe" "cmTC_fbada/fast"
+    D:/Aplikacje/Mingw_7.2.0/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_fbada.dir\build.make CMakeFiles/cmTC_fbada.dir/build
+    mingw32-make.exe[1]: Entering directory 'D:/Coding/C++/DALia/tests/cmake-build-debug/CMakeFiles/CMakeTmp'
+    process_begin: CreateProcess(NULL, "D:\Pliki programâ”śâ”‚w (x86)\JetBrains\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe" -E cmake_echo_color --switch= --progress-dir=D:\Coding\C++\DALia\tests\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles --progress-num=1 "Building C object CMakeFiles/cmTC_fbada.dir/testCCompiler.c.obj", ...) failed.
+    make (e=2): Nie moâ”�na odnaleĆ’Âµ okreÂŁlonego pliku.
+    mingw32-make.exe[1]: *** [CMakeFiles\cmTC_fbada.dir\build.make:64: CMakeFiles/cmTC_fbada.dir/testCCompiler.c.obj] Error 2
+    mingw32-make.exe[1]: Leaving directory 'D:/Coding/C++/DALia/tests/cmake-build-debug/CMakeFiles/CMakeTmp'
+    mingw32-make.exe: *** [Makefile:120: cmTC_fbada/fast] Error 2
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:1 (project)
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.13)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring incomplete, errors occurred!
+See also "D:/Coding/C++/DALia/tests/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "D:/Coding/C++/DALia/tests/cmake-build-debug/CMakeFiles/CMakeError.log".
