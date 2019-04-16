@@ -10,7 +10,7 @@
 #include <unordered_map>
 #include <memory>
 
-#include "rule"
+#include "i_rule.h"
 
 namespace DALia {
 
@@ -23,7 +23,6 @@ namespace DALia {
   };
 
   typedef std::shared_ptr<i_inferer> infererPtr;
-
 }
 
 

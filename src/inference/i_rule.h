@@ -11,7 +11,7 @@
 
 namespace DALia {
 
-  class i_rule() {
+  class i_rule {
     public:
     private:
       virtual ~i_rule();
