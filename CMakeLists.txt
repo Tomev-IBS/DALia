@@ -3,4 +3,6 @@ project(DALia VERSION 0.0.1)
 
 set(CMAKE_CXX_STANDARD 14)
 
+add_subdirectory(tests)
+
 add_library(DALia src/test.cpp)

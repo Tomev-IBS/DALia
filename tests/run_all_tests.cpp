@@ -1,4 +1,4 @@
-#include "../src/test.cpp"
+#include "test.cpp"
 #include "gtest/gtest.h"
 
 TEST(BasicTests, AdditionTest){
@@ -6,5 +6,6 @@ TEST(BasicTests, AdditionTest){
 }
 
 int main(void){
+  testing::InitGoogleTest();
   return RUN_ALL_TESTS();
 }
