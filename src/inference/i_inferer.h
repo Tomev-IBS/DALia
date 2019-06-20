@@ -11,7 +11,7 @@
 #include <memory>
 #include <iostream>
 
-#include "rule"
+#include "i_rule.h"
 
 namespace DALia {
 
@@ -24,7 +24,6 @@ namespace DALia {
   };
 
   typedef std::shared_ptr<i_inferer> infererPtr;
-
 }
 
 
