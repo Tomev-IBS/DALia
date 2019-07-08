@@ -17,6 +17,7 @@ namespace DALia {
 
   class i_inferer {
     public:
+      virtual ~i_inferer();
       // Note that it has to be passed as a copy, as most inferers will remove rules that were fired during inference.
       virtual void infer(std::vector<rulePtr> rules, std::unordered_map<std::string, std::vector<std::string>> facts) = 0;
       // A few information has to be provided for experiments
@@ -35,8 +36,6 @@ namespace DALia {
       virtual int getNumberOfCheckedObjects() = 0;
       virtual int getNumberOfRulesThatCouldBeFired() = 0;
       virtual double getInferenceTime() = 0;
-
-      virtual ~i_inferer() = delete;
   };
 
   typedef std::shared_ptr<i_inferer> infererPtr;

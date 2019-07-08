@@ -11,15 +11,25 @@
 
 #include "i_inferer.h"
 
-class classicalInferer : public i_inferer {
-  public:
-    classicalInferer();
-    void infer(std::vector<rulePtr> rules) = 0;
-    std::unordered_map<std::string, std::string> getReport() = 0;
-  private:
-    std::unordered_map<std::string, std::vector<std::string>> inferenceTarget;
+namespace DALia {
 
-};
+  class classicalInferer : public i_inferer {
+    public:
+      classicalInferer();
+      void infer(std::vector<rulePtr> rules, std::unordered_map<std::string, std::vector<std::string>> facts) override ;
+      std::string getInferenceType() override ;
+      ~classicalInferer() override;
+    protected:
+      unsigned int numberOfRulesFired = 0;
+      std::unordered_map<std::string, std::vector<std::string>> _facts;
+      std::unordered_map<std::string, std::vector<std::string>> _inferenceTarget;
+
+      int findRuleToFire(const std::vector<rulePtr>& rules) const;
+      bool canRuleBeFired(const rulePtr r) const;
+      void fireRule(const int& indexOfRuleToFire, std::vector<rulePtr> rules);
+  };
+
+}
 
 
 #endif //DALIA_CLASSICALINFERER_H
