@@ -25,7 +25,7 @@ namespace DALia {
       std::unordered_map<std::string, std::vector<std::string>> _inferenceTarget;
 
       int findRuleToFire(const std::vector<rulePtr>& rules) const;
-      bool canRuleBeFired(const rulePtr r) const;
+      bool canRuleBeFired(rulePtr& r) const;
       void fireRule(const int& indexOfRuleToFire, std::vector<rulePtr> rules);
   };
 

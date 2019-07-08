@@ -38,7 +38,8 @@ int DALia::classicalInferer::findRuleToFire(const std::vector<rulePtr>& rules) c
 
   // Check loop exit condition.
   for(unsigned int i = 0; i < rules.size() && indexOfRuleToFire == -1; ++i){
-    if(canRuleBeFired(rules[i])) indexOfRuleToFire = i;
+    if(!canRuleBeFired(const_cast<rulePtr &>(rules[i]))) continue;
+    indexOfRuleToFire = i;
   }
 
   return indexOfRuleToFire;
@@ -49,10 +50,10 @@ int DALia::classicalInferer::findRuleToFire(const std::vector<rulePtr>& rules) c
  * @param r A pointer to examined rule.
  * @return True if rule can be fired, false otherwise.
  */
-bool DALia::classicalInferer::canRuleBeFired(rulePtr r) const {
+bool DALia::classicalInferer::canRuleBeFired(rulePtr& r) const {
   auto rulePremises = r->getPremises();
 
-  for(auto kv : rulePremises){
+  for(const auto& kv : rulePremises){
     std::string attributeName = kv.first;
 
     // If map doesn't have data on given attribute return false.
@@ -60,7 +61,7 @@ bool DALia::classicalInferer::canRuleBeFired(rulePtr r) const {
 
     std::vector<std::string> attributeValues = kv.second;
 
-    for(auto value : attributeValues){
+    for(const auto& value : attributeValues){
       auto valuePosition = std::find(_facts.at(attributeName).begin(), _facts.at(attributeName).end(), value);
 
       // Return false if there is no such value in facts for given attribute.
@@ -85,7 +86,7 @@ void DALia::classicalInferer::fireRule(const int& indexOfRuleToFire, std::vector
 
   std::unordered_map<std::string, std::vector<std::string>> conclusions = rules[indexOfRuleToFire]->getConclusion();
 
-  for(auto kv : conclusions){
+  for(const auto& kv : conclusions){
     // Add key to facts map if facts don't contain it already.
     if(_facts.find(kv.first) == _facts.end()){
       _facts[kv.first] = kv.second;
@@ -95,7 +96,7 @@ void DALia::classicalInferer::fireRule(const int& indexOfRuleToFire, std::vector
     // Add non-duplicate information to facts map.
     std::vector<std::string> attributeValues = kv.second;
 
-    for(std::string val : attributeValues){
+    for(const std::string& val : attributeValues){
       if(std::find(_facts[kv.first].begin(), _facts[kv.first].end(), val) != _facts[kv.first].end()) continue;
       _facts[kv.first].push_back(val);
     }
