@@ -6,8 +6,12 @@ add_subdirectory(googletest)
 
 include_directories(googletest/googletest/include)
 include_directories(../src)
+include_directories(src/inference)
 
-add_executable(DALia_tests run_all_tests.cpp)
+add_executable(DALia_tests
+        run_all_tests.cpp
+        src/inference/classicalInfererTest.cpp
+)
 
 target_link_libraries(DALia_tests gtest gtest_main)
 target_link_libraries(DALia_tests DALia)

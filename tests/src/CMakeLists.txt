@@ -1,1 +1,0 @@
-project(DALia_tests VERSION 0.0.1)

@@ -18,6 +18,7 @@ namespace DALia {
       classicalInferer();
       void infer(std::vector<rulePtr> rules, std::unordered_map<std::string, std::vector<std::string>> facts) override ;
       std::string getInferenceType() override ;
+      virtual unsigned int getNumberOfRulesThatCouldInitiallyBeFired() = 0;
       ~classicalInferer() override;
     protected:
       unsigned int numberOfRulesFired = 0;
