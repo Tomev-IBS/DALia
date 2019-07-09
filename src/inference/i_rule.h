@@ -25,7 +25,7 @@ namespace DALia {
       virtual std::unordered_map<std::string, std::vector<std::string>> getPremises() = 0;
       virtual std::unordered_map<std::string, std::vector<std::string>> getConclusion() = 0;
 
-      virtual ~i_rule();
+      virtual ~i_rule() = default;
   };
 
   typedef std::shared_ptr<i_rule> rulePtr;
