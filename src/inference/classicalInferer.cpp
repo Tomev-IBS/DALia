@@ -114,3 +114,47 @@ std::string DALia::classicalInferer::getInferenceType() {
   return "Classical Inference";
 }
 
+bool DALia::classicalInferer::wasInferenceTargetSet() {
+  return false;
+}
+
+bool DALia::classicalInferer::wasInferenceTargetInitiallyConfirmable() {
+  return false;
+}
+
+unsigned int DALia::classicalInferer::getNumberOfInferenceIterations() {
+  return 0;
+}
+
+bool DALia::classicalInferer::wasAnyRuleFired() {
+  return false;
+}
+
+unsigned int DALia::classicalInferer::getNumberOfRulesFired() {
+  return 0;
+}
+
+unsigned int DALia::classicalInferer::getNumberOfNewFacts() {
+  return 0;
+}
+
+bool DALia::classicalInferer::wasInferenceTargetConfirmed() {
+  return false;
+}
+
+bool DALia::classicalInferer::wasNewKnowledgeExplored() {
+  return false;
+}
+
+int DALia::classicalInferer::getNumberOfCheckedObjects() {
+  return 0;
+}
+
+int DALia::classicalInferer::getNumberOfRulesThatCouldBeFired() {
+  return 0;
+}
+
+double DALia::classicalInferer::getInferenceTime() {
+  return 0;
+}
+
