@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(tests)
 
 add_library(
-        DALia src/test.cpp
+        DALia
         src/inference/i_rule.h
         src/inference/i_inferer.h
         src/inference/classicalInferer.h
