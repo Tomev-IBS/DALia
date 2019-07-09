@@ -22,8 +22,8 @@ namespace DALia {
        * meaning, that these to buttons should be pressed. There's no reason for rules to be in that form, but there's
        * also no reason for them not to. The interface should provide the way to process both cases.
       */
-      std::unordered_map<std::string, std::vector<std::string>> getPremises();
-      std::unordered_map<std::string, std::vector<std::string>> getConclusion();
+      virtual std::unordered_map<std::string, std::vector<std::string>> getPremises() = 0;
+      virtual std::unordered_map<std::string, std::vector<std::string>> getConclusion() = 0;
 
       virtual ~i_rule();
   };

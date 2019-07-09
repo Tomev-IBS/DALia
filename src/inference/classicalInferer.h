@@ -15,13 +15,12 @@ namespace DALia {
 
   class classicalInferer : public i_inferer {
     public:
-      classicalInferer();
+      classicalInferer() = default;
+
       void infer(std::vector<rulePtr> rules, std::unordered_map<std::string, std::vector<std::string>> facts) override ;
       std::string getInferenceType() override ;
       unsigned int getNumberOfRulesThatCouldInitiallyBeFired() override;
-
       bool wasInferenceTargetSet() override;
-      ~classicalInferer() override;
       bool wasInferenceTargetInitiallyConfirmable() override;
       unsigned int getNumberOfInferenceIterations() override;
       bool wasAnyRuleFired() override;
@@ -32,6 +31,9 @@ namespace DALia {
       int getNumberOfCheckedObjects() override;
       int getNumberOfRulesThatCouldBeFired() override;
       double getInferenceTime() override;
+
+      ~classicalInferer() override = default;
+
     protected:
       unsigned int numberOfRulesFired = 0;
       std::unordered_map<std::string, std::vector<std::string>> _facts;

@@ -115,7 +115,7 @@ std::string DALia::classicalInferer::getInferenceType() {
 }
 
 bool DALia::classicalInferer::wasInferenceTargetSet() {
-  return false;
+  return !_inferenceTarget.empty();
 }
 
 bool DALia::classicalInferer::wasInferenceTargetInitiallyConfirmable() {
@@ -157,4 +157,10 @@ int DALia::classicalInferer::getNumberOfRulesThatCouldBeFired() {
 double DALia::classicalInferer::getInferenceTime() {
   return 0;
 }
+
+unsigned int DALia::classicalInferer::getNumberOfRulesThatCouldInitiallyBeFired() {
+  return 0;
+}
+
+
 

@@ -20,3 +20,6 @@ TEST_F(classicalInfererTest, InferenceTypeCheck){
   ASSERT_EQ(inferer.getInferenceType(), "Classical Inference");
 }
 
+TEST_F(classicalInfererTest, InferenceTargetNotSet){
+  ASSERT_FALSE(inferer.wasInferenceTargetSet());
+}

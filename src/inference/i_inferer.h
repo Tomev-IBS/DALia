@@ -17,7 +17,7 @@ namespace DALia {
 
   class i_inferer {
     public:
-      virtual ~i_inferer();
+      virtual ~i_inferer() = default;
       // Note that it has to be passed as a copy, as most inferers will remove rules that were fired during inference.
       virtual void infer(std::vector<rulePtr> rules, std::unordered_map<std::string, std::vector<std::string>> facts) = 0;
       // A few information has to be provided for experiments
